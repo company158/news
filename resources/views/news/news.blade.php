@@ -149,9 +149,11 @@
                         <div class="card shadow-sm">
                             <h2 class="text-center mt-3">{{$value->title}}</h2>
                             <div class="card-body">
+                                <p class="card-text text-center">{{ route('news.show',['news'=>$value->url]) }}</p>
                                 @if($value->show)
-                                    <p class="card-text text-end">{{\Illuminate\Support\Carbon::parse($value->created_at)->format('Y-m-d')}}</p>
                                     <p class="card-text">{{$value->short_description}}</p>
+                                    <div class="card-text text-end">{{\Illuminate\Support\Carbon::parse($value->created_at)->format('Y-m-d')}}</div>
+                                    <p class="card-text text-end">Активний</p>
                                 @else
                                     <p class="card-text text-center">Новина прихована</p>
                                 @endif
